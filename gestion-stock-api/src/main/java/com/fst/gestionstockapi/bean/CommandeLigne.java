@@ -10,6 +10,7 @@ public class CommandeLigne {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	
 	private Long id;
+	private String reference;
 	@ManyToOne
 	private Commande commande;
 	@ManyToOne
@@ -22,6 +23,13 @@ public class CommandeLigne {
 	}
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getReference() {
+		return reference;
+	}
+	public void setReference(String reference) {
+		this.reference = reference;
 	}
 	public Commande getCommande() {
 		return commande;

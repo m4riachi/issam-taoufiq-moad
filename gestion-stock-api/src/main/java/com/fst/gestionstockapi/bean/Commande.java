@@ -16,6 +16,7 @@ public class Commande {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	private String reference;
 	private Date dateCreation;
 	private double totale;
 	@OneToMany(mappedBy = "commande")
@@ -28,6 +29,14 @@ public class Commande {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getReference() {
+		return reference;
+	}
+
+	public void setReference(String reference) {
+		this.reference = reference;
 	}
 
 	public Date getDateCreation() {
