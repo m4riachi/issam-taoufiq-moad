@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Produit {
@@ -11,15 +12,17 @@ public class Produit {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	private String libelle;
-	private Number qte;
+	private String name;
+	private int qte;
 	private double prix_achat;
 	private double prix_vente;
-	Categorie categorie;
-	public Produit(Long id, String libelle, Number qte, double prix_achat, double prix_vente, Categorie categorie) {
+	
+	@ManyToOne
+	private Categorie categorie;
+	public Produit(Long id, String libelle, int qte, double prix_achat, double prix_vente, Categorie categorie, String name) {
 		super();
 		this.id = id;
-		this.libelle = libelle;
+		this.name = name;
 		this.qte = qte;
 		this.prix_achat = prix_achat;
 		this.prix_vente = prix_vente;
@@ -37,16 +40,16 @@ public class Produit {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getLibelle() {
-		return libelle;
+	public String getname() {
+		return name;
 	}
-	public void setLibelle(String libelle) {
-		this.libelle = libelle;
+	public void setname(String name) {
+		this.name = name;
 	}
-	public Number getQte() {
+	public int getQte() {
 		return qte;
 	}
-	public void setQte(Number qte) {
+	public void setQte(int qte) {
 		this.qte = qte;
 	}
 	public double getPrix_achat() {

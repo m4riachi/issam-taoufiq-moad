@@ -7,5 +7,7 @@ import com.fst.gestionstockapi.bean.Categorie;
 
 @Repository
 public interface CategorieRepository extends JpaRepository<Categorie, Long>{
-
+	
+	Categorie findByName(String name);
+	Categorie findByNameAndId(String name, Long id);
 }
