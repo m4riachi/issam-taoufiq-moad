@@ -1,6 +1,7 @@
 package com.fst.gestionstockapi.dao;
 
 import java.sql.Date;
+import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -12,7 +13,6 @@ public interface CommandeRepository extends JpaRepository<Commande, Long>{
 	
 	public Commande findByReference(String reference);
 	
-	public Commande findByDate(Date dateCreation);
+	public List<Commande> findByDate(Date dateCreation);
 	
-	public int deleteByReference(String reference);
 }

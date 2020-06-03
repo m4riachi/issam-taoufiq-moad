@@ -20,15 +20,16 @@ public class CommandeService {
 		return commandeRepository.findByReference(reference);
 	}
 
-	public Commande findByDate(Date dateCreation) {
+	public List<Commande> findByDate(Date dateCreation) {
 		return commandeRepository.findByDate(dateCreation);
 	}
+	
 	@Transactional
-	public int deleteByReference(String reference) {
-		 commandeRepository.deleteByReference(reference);
+	public int deleteById(Long id) {
+		 commandeRepository.deleteById(id);
 		 return 1;
 	}
-
+	
 	public int save(Commande commande) {
 		 commandeRepository.save(commande);
 		 return 1;
@@ -38,5 +39,8 @@ public class CommandeService {
 		return commandeRepository.findAll();
 	}
 	
-	
+	public int update(Commande commande) {
+		 commandeRepository.save(commande);
+		 return 1;
+	}
 }
