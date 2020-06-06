@@ -17,8 +17,8 @@ import com.fst.gestionstockapi.bean.Categorie;
 import com.fst.gestionstockapi.service.CategorieService;
 
 @RestController
-@RequestMapping()
-@CrossOrigin()
+@RequestMapping("/gestion-stock/categorie")
+@CrossOrigin("http://localhost:4200")
 public class CategorieRest {
 	
 	@Autowired

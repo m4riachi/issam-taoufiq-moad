@@ -17,9 +17,10 @@ import com.fst.gestionstockapi.bean.Produit;
 import com.fst.gestionstockapi.service.ProduitService;
 
 @RestController
-@RequestMapping()
-@CrossOrigin()
+@RequestMapping("/gestion-stock/produit")
+@CrossOrigin("http://localhost:4200")
 public class ProduitRest {
+	
 	@Autowired
 	private ProduitService produitService;
 	
