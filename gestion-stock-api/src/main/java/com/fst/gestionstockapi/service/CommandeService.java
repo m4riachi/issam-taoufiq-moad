@@ -13,6 +13,7 @@ import com.fst.gestionstockapi.dao.CommandeRepository;
 
 @Service
 public class CommandeService {
+	
 	@Autowired
 	private CommandeRepository commandeRepository;
 
@@ -21,7 +22,7 @@ public class CommandeService {
 	}
 
 	public List<Commande> findByDate(Date dateCreation) {
-		return commandeRepository.findByDate(dateCreation);
+		return commandeRepository.findByDateCreation(dateCreation);
 	}
 	
 	@Transactional

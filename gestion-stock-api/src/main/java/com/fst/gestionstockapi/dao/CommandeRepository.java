@@ -13,6 +13,6 @@ public interface CommandeRepository extends JpaRepository<Commande, Long>{
 	
 	public Commande findByReference(String reference);
 	
-	public List<Commande> findByDate(Date dateCreation);
+	public List<Commande> findByDateCreation(Date dateCreation);
 	
 }

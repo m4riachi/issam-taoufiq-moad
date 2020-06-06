@@ -1,13 +1,11 @@
 package com.fst.gestionstockapi.bean;
 
 import java.sql.Date;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 
 @Entity
@@ -19,14 +17,27 @@ public class Commande {
 	private String reference;
 	private Date dateCreation;
 	private double totale;
+	/*
 	@OneToMany(mappedBy = "commande")
 	private List<CommandeLigne> commandeLignes;
+	*/
 	
+	public Commande(Long id, String reference, Date dateCreation, double totale) {
+		super();
+		this.id = id;
+		this.reference = reference;
+		this.dateCreation = dateCreation;
+		this.totale = totale;
+	}
 	
+	public Commande() {
+		super();
+	}
+
 	public Long getId() {
 		return id;
 	}
-
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
@@ -54,7 +65,7 @@ public class Commande {
 	public void setTotale(double totale) {
 		this.totale = totale;
 	}
-
+/*
 	public List<CommandeLigne> getCommandeLignes() {
 		return commandeLignes;
 	}
@@ -63,6 +74,6 @@ public class Commande {
 		this.commandeLignes = commandeLignes;
 	}
 	
-	
+	*/
 	
 }

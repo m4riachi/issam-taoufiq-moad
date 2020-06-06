@@ -24,7 +24,7 @@ public class ProduitService{
 			return 1;
 		}
 	}
-
+	
 	@Transactional
 	public int delete(Long id) {
 		produitRepository.deleteById(id);
